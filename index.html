@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.2/handlebars.min.js"></script>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"/>
         <link rel="stylesheet" href="css/style.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <title>Boolfix</title>
@@ -11,15 +11,30 @@
     <body>
         <input id="input" type="search" name="" value="">
         <button id="btn-click" type="button" name="button">Search</button>
-        <div class="lista-film"></div>
+
+        <h2>Film</h2>
+        <div class="results-film">
+            <ul class="list"></ul>
+        </div>
+
+            <h2>Serie TV</h2>
+            <div class="results-serietv">
+                <ul class="list"></ul>
+            </div>
+            <div class="no-risultati"></div>
 
         <script id="film-template" type="text/x-handlebars-template">
-            <div class="film">
+            <li>
+                <p>Tipo: {{tipo}}</p>
                 <h3>Titolo: {{title}}</h3>
                 <h4>Titolo Originale: {{original_title}}</h4>
-                <p>Lingua: {{{original_language}}}</p>
+                <p class="lingua">Lingua: {{{original_language}}}</p>
                 <p>Voto: {{{vote_average}}}</p>
-            </div>
+            </li>
+        </script>
+
+        <script id="no-result-template" type="text/x-handlebars-template">
+          <div>{{noResult}}</div>
         </script>
 
         <script src="js/script.js" charset="utf-8"></script>
