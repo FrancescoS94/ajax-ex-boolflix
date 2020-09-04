@@ -34,8 +34,8 @@ $(document).ready(function() {
         var url1 = 'https://api.themoviedb.org/3/search/movie';
         var url2 = 'https://api.themoviedb.org/3/search/tv';
 
-        search(search, url1, "Film");   // Richiamo la funzione per cercare e stampare la lista della ricerca dei film.
-        search(search, url2, "SerieTV");
+        chiamata(search, url1, "Film");   // Richiamo la funzione per cercare e stampare la lista della ricerca dei film.
+        chiamata(search, url2, "SerieTV");
     });
 
     $("#input").keyup(function() {   // Pigiando su invio, attivo le funzioni.
@@ -45,8 +45,8 @@ $(document).ready(function() {
             var url1 = 'https://api.themoviedb.org/3/search/movie';
             var url2 = 'https://api.themoviedb.org/3/search/tv';
 
-            search(search, url1, "Film");
-            search(search, url2, "SerieTV");
+            chiamata(search, url1, "Film");
+            chiamata(search, url2, "SerieTV");
         }
     });
 });
@@ -59,7 +59,7 @@ function reset() {   // Funzione per svuotare il campo di ricerca.
     $("#input").val("");
 };
 
-function search(data, url, type) {   // Funzione per cercare e stampare la lista dei dei film ricercati.
+function chiamata(data, url, type) {   // Funzione per cercare e stampare la lista dei dei film ricercati.
     $.ajax(                   // Effettuo una chiamata API attraverso Ajax.
         {
             url: url,
@@ -82,30 +82,6 @@ function search(data, url, type) {   // Funzione per cercare e stampare la lista
         }
     );
 };
-
-// function searchSerieTV(data) {
-//     $.ajax(
-//         {
-//             url: "https://api.themoviedb.org/3/search/tv",
-//             method: "GET",
-//             data: {
-//                 api_key: "96df83a2ec59d64214d9e5a29ad76f29",
-//                 query: data,
-//                 language: "it-IT"
-//             },
-//             success: function(risposta) {
-//                 if (risposta.total_results > 0) {
-//                     printResult(risposta.results, "SerieTV");
-//                 } else {
-//                     noResults("SerieTV");
-//                 }
-//             },
-//             error: function() {
-//                 alert("Errore");
-//             }
-//         }
-//     );
-// };
 
 function printResult(data, type) {
     var source = $("#film-template").html();
