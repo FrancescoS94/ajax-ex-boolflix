@@ -4,28 +4,74 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color: #141414;
+}
+
+header {
+    height: 100px;
+    background-color: #0c0c0c;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header img {
+    height: 50px;
+    margin-left: 20px;
+}
+
+#btn-click {
+    margin-right: 20px;
+    background-color: #0c0c0c;
+    border: none;
+    color: white;
+    font-size: 20px;
+}
+
+#input {
+    background-color: #0c0c0c;
+    border: 1px solid white;
+    height: 22px;
+    color: white;
+}
+
 .lingua img {
     width: 20px;
 }
 
 li {
+    position: relative;
     float: left;
     list-style: none;
     height: 400px;
-    margin: 3px 10px;
+    width: 280px;
+    margin: 10px 0;
+    margin-left: 20px;
 }
 
 li .poster {
-    height: 400px;
-    width: 280px;
-    display: flex;
+    height: auto;
+    max-height: 100%;
+    width: 100%;
 }
 
 .descrizione {
     position: absolute;
+    top: 0;
+    left: 0;
     margin: 0 3px;
+    display: none;
+}
+
+li:hover .descrizione{
+    display: block;
 }
 
 .bold {
     font-weight: bold;
+}
+
+.fas, .far {
+    color: #f5c518;
 }

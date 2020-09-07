@@ -9,8 +9,13 @@
         <title>Boolfix</title>
     </head>
     <body>
-        <input id="input" type="search" name="" value="">
-        <button id="btn-click" type="button" name="button">Search</button>
+        <header>
+            <img src="img\netflix-log.png" alt="Logo Boolfix">
+            <div>
+                <input id="input" type="search" name="" value="">
+                <button id="btn-click" type="button" name="button"><i class="fa fa-search" aria-hidden="true"></i></button>
+            </div>
+        </header>
 
         <!-- <h2>Film</h2> -->
         <div class="results-film">
@@ -24,8 +29,7 @@
             <div class="no-risultati"></div>
 
         <script id="film-template" type="text/x-handlebars-template">
-            <li>
-                <!-- <img class="poster" src="{{img}}" alt=""> -->
+            <li class="card">
                 <div class="descrizione">
                     <span class="bold">Titolo:</span>
                     <h3>{{title}}</h3>
