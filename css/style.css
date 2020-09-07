@@ -7,3 +7,25 @@
 .lingua img {
     width: 20px;
 }
+
+li {
+    float: left;
+    list-style: none;
+    height: 400px;
+    margin: 3px 10px;
+}
+
+li .poster {
+    height: 400px;
+    width: 280px;
+    display: flex;
+}
+
+.descrizione {
+    position: absolute;
+    margin: 0 3px;
+}
+
+.bold {
+    font-weight: bold;
+}

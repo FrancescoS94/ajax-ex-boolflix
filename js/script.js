@@ -23,6 +23,10 @@
 // stando attenti ad avere alla fine dei valori simili
 // (le serie e i film hanno campi nel JSON di risposta diversi,
 // simili ma non sempre identici).
+// Milestone 3:
+// In questa milestone come prima cosa aggiungiamo la copertina del film o della serie
+// al nostro elenco.
+
 
 
 $(document).ready(function() {
@@ -59,7 +63,7 @@ function reset() {   // Funzione per svuotare il campo di ricerca.
     $("#input").val("");
 };
 
-function chiamata(data, url, type) {   // Funzione per cercare e stampare la lista dei dei film ricercati.
+function chiamata(data, url, type) {   // Funzione per cercare e stampare la lista dei dei Film e SerieTV ricercati.
     $.ajax(                   // Effettuo una chiamata API attraverso Ajax.
         {
             url: url,
@@ -96,6 +100,7 @@ function printResult(data, type) {
             var original_title = data[i].original_name;
         }
         var context = {
+            img:"https://image.tmdb.org/t/p/w300" + data[i].poster_path,
             tipo: type,
             title: title,
             original_title: original_title,
@@ -111,7 +116,7 @@ function printResult(data, type) {
     };
 };
 
-function flag(lingua) {
+function flag(lingua) {    // Funzione per sostituire la lingua con la bandiera.
     var language = ["en", "it"];
     if (language.includes(lingua)) {
         return '<img src="img/'+lingua+'.png">';
