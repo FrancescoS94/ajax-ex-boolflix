@@ -29,17 +29,17 @@
             <div class="no-risultati"></div>
 
         <script id="film-template" type="text/x-handlebars-template">
-            <li class="card">
+            <li>
                 <div class="descrizione">
                     <span class="bold">Titolo:</span>
                     <h3>{{title}}</h3>
                     <span class="bold">Titolo Originale:</span>
                     <h4>{{original_title}}</h4>
-                    <p class="lingua">Lingua: {{{original_language}}}</p>
-                    <p>Voto: {{{vote_average}}}</p>
-                    <p>Tipo: {{tipo}}</p>
+                    <p class="lingua"><span class="bold">Lingua:</span> {{{original_language}}}</p>
+                    <p><span class="bold">Voto:</span> {{{vote_average}}}</p>
+                    <p><span class="bold">Tipo:</span> {{tipo}}</p>
                 </div>
-                <img class="poster" src="{{img}}" alt="">
+                <img class="poster" src="{{img}}" alt="Poster di {{title}}">
             </li>
         </script>
 

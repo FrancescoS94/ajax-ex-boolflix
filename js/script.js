@@ -100,12 +100,12 @@ function printResult(data, type) {
             var original_title = data[i].original_name;
         }
         var context = {
-            img:"https://image.tmdb.org/t/p/w300" + data[i].poster_path,
-            tipo: type,
+            img: insertPoster(data[i].poster_path),
             title: title,
             original_title: original_title,
             original_language: flag(data[i].original_language),
-            vote_average: stars(data[i].vote_average)
+            vote_average: stars(data[i].vote_average),
+            tipo: type
         };
         var html = template(context);
         if (type == "Film") {
@@ -114,6 +114,16 @@ function printResult(data, type) {
             $(".results-serietv .list").append(html);
         }
     };
+};
+
+function insertPoster(img) {
+    if (img == null) {
+        var urlCompleta = "https://www.wildhareboca.com/wp-content/uploads/sites/310/2018/03/image-not-available.jpg";
+    } else {
+        var urlBase = "https://image.tmdb.org/t/p/w300";
+        var urlCompleta = urlBase + img;
+    }
+    return urlCompleta;
 };
 
 function flag(lingua) {    // Funzione per sostituire la lingua con la bandiera.
